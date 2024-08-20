@@ -5,20 +5,16 @@ on: push
 jobs:
     first_job:
         runs-on: ubuntu-latest
-        steps: 
-        - name: Welcome message
-          run: echo "My first Github Actions Job"
-        
+        steps:               
         - name: Checkout Repo
           uses: actions/checkout@v4
-          with:
-            repository: ''  
-        
-        - name: List files
-          run: ls -la
-        
-        - name: Present working Directory
-          run: pwd
-        
-        - name: Read File
-          run: cat README.md
+
+        - name: List and Read Files
+          run: |
+            echo "My first Github Actions Job"
+            ls -ltra
+            pwd
+            cat README.md
+
+        - name: Generate ASCII Artwork
+          run: cowsay -f dragon "Run for cover, I am a DRAGON.....RAWR" >> dragon.txt
