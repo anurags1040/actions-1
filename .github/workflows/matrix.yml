@@ -1,4 +1,4 @@
-name: Matrix-config
+name: Matrix-config-wf
 
 on: push
 
